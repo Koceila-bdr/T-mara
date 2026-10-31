@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Cours Tâmara</title>
+  <meta name="description" content="Contactez Cours Tâmara, 6 rue du Moulinet, Paris 13e : renseignements sur les cours de langues et le soutien scolaire.">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a class="logo" href="index.html"><img src="images/logo.png" alt="Cours Tâmara — Langues et soutien scolaire"></a>
+      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir ou fermer le menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="cours-tamara.html">Cours Tâmara</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-titre">
+      <div class="conteneur">
+        <h1>Contact</h1>
+        <p>Une question, une inscription ? Écrivez-nous, nous vous répondons par mail.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur contact-layout">
+
+        <div>
+          <div class="contact-infos">
+            <div class="carte orange">
+              <h3>📍 Adresse</h3>
+              <p>Cours Tâmara<br>6 rue du Moulinet<br>75013 Paris</p>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=6+rue+du+Moulinet+75013+Paris" target="_blank" rel="noopener">Voir sur la carte</a></p>
+            </div>
+            <div class="carte bleue">
+              <h3>✉️ Email</h3>
+              <p><a href="mailto:courstamara@gmail.com">courstamara@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carte">
+          <h2>Envoyez-nous un message</h2>
+
+          <!-- IMPORTANT : remplacer VOTRE_ID_FORMSPREE par l'identifiant fourni par Formspree
+               (voir les explications données avec le site) -->
+          <form class="formulaire" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+
+            <div class="deux-champs">
+              <div class="champ">
+                <label for="nom">Nom et prénom <span class="requis">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="name" required>
+              </div>
+              <div class="champ">
+                <label for="email">Votre email <span class="requis">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="deux-champs">
+              <div class="champ">
+                <label for="telephone">Téléphone (facultatif)</label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+              </div>
+              <div class="champ">
+                <label for="sujet">Je suis intéressé(e) par <span class="requis">*</span></label>
+                <select id="sujet" name="sujet" required>
+                  <option value="">— Choisir —</option>
+                  <option value="Arabe">Cours d'arabe</option>
+                  <option value="Anglais">Cours d'anglais</option>
+                  <option value="Soutien scolaire">Soutien scolaire</option>
+                  <option value="Autre">Autre question</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="champ">
+              <label for="niveau">Classe ou niveau de l'élève</label>
+              <input type="text" id="niveau" name="niveau" placeholder="Ex. : CM2, 5e, niveau A2…">
+            </div>
+
+            <div class="champ">
+              <label for="message">Votre message <span class="requis">*</span></label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <!-- Champ anti-spam : doit rester vide -->
+            <div class="piege" aria-hidden="true">
+              <label>Ne pas remplir <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <label class="consentement">
+              <input type="checkbox" name="consentement" required>
+              <span>J'accepte que mes données soient utilisées pour répondre à ma demande. Elles ne sont ni revendues ni utilisées à d'autres fins. <span class="requis">*</span></span>
+            </label>
+
+            <div>
+              <button type="submit" class="bouton">Envoyer le message</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="grille trois">
+        <div>
+          <h3>Cours Tâmara</h3>
+          <p>Langues &amp; soutien scolaire</p>
+        </div>
+        <div>
+          <h3>Nous trouver</h3>
+          <p>6 rue du Moulinet<br>75013 Paris</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="mailto:courstamara@gmail.com">courstamara@gmail.com</a></p>
+        </div>
+      </div>
+      <small>© 2026 Cours Tâmara — Tous droits réservés</small>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script>
+    // Pré-sélectionne le sujet quand on arrive depuis une page d'offre (?sujet=langues / soutien)
+    (function () {
+      var p = new URLSearchParams(window.location.search).get('sujet');
+      var s = document.getElementById('sujet');
+      if (p === 'soutien') s.value = 'Soutien scolaire';
+    })();
+  </script>
+</body>
+</html>
