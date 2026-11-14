@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Cours Tâmara</title>
   <meta name="description" content="Contactez Cours Tâmara, 6 rue du Moulinet, Paris 13e : renseignements sur les cours de langues et le soutien scolaire.">
-  <link rel="icon" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -44,6 +47,10 @@
               <p>Cours Tâmara<br>6 rue du Moulinet<br>75013 Paris</p>
               <p><a href="https://www.google.com/maps/search/?api=1&amp;query=6+rue+du+Moulinet+75013+Paris" target="_blank" rel="noopener">Voir sur la carte</a></p>
             </div>
+            <div class="carte corail">
+              <h3>📞 Téléphone</h3>
+              <p><a href="tel:+33749300541">07 49 30 05 41</a></p>
+            </div>
             <div class="carte bleue">
               <h3>✉️ Email</h3>
               <p><a href="mailto:courstamara@gmail.com">courstamara@gmail.com</a></p>
@@ -56,7 +63,7 @@
 
           <!-- IMPORTANT : remplacer VOTRE_ID_FORMSPREE par l'identifiant fourni par Formspree
                (voir les explications données avec le site) -->
-          <form class="formulaire" action="https://formspree.io/f/xpppjgnk" method="POST">
+          <form class="formulaire" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
 
             <div class="deux-champs">
               <div class="champ">
@@ -78,7 +85,7 @@
                 <label for="sujet">Je suis intéressé(e) par <span class="requis">*</span></label>
                 <select id="sujet" name="sujet" required>
                   <option value="">— Choisir —</option>
-                  <option value="Arabe">Cours d'arabe</option>
+                  <option value="Arabe">Cours d'arabe littéraire</option>
                   <option value="Anglais">Cours d'anglais</option>
                   <option value="Soutien scolaire">Soutien scolaire</option>
                   <option value="Autre">Autre question</option>
@@ -114,6 +121,34 @@
 
       </div>
     </section>
+
+    <section class="section alt" id="parcours">
+      <div class="conteneur">
+        <h2 class="centre">🗺️ Comment nous trouver ? Suivez le parcours !</h2>
+        <p class="intro centre">Trois étapes, trois repères : c'est parti pour l'aventure !</p>
+        <ol class="parcours">
+          <li class="etape">
+            <span class="etape-num" aria-hidden="true">1</span>
+            <img src="images/lieu-rue.jpg" alt="La porte noire du numéro 6 de la rue du Moulinet" loading="lazy">
+            <h3>🚶 Repérez le n°&nbsp;6</h3>
+            <p>Dans la rue du Moulinet, cherchez la grande porte noire avec le numéro <strong>6</strong> sur le mur.</p>
+          </li>
+          <li class="etape">
+            <span class="etape-num" aria-hidden="true">2</span>
+            <img src="images/lieu-entree.jpg" alt="La porte bleue de Cours Tâmara avec son rond, à côté du panneau Escalier C, une grande plante et un paillasson chat" loading="lazy">
+            <h3>🐱 Cherchez la porte bleue</h3>
+            <p>Repérez le panneau « Escalier C » : l'escalier C est la porte à droite de la nôtre. <strong>Notre école, c'est la porte bleue juste à côté</strong>, avec le rond « Cours Tâmara ». Le paillasson chat et la grande plante vous attendent !</p>
+          </li>
+          <li class="etape">
+            <span class="etape-num" aria-hidden="true">3</span>
+            <img src="images/lieu-salle.jpg" alt="La salle de cours avec ses tables jaunes" loading="lazy">
+            <h3>🎉 Bienvenue à Cours Tâmara !</h3>
+            <p>Voilà notre salle : lumineuse, colorée et prête à accueillir les enfants.</p>
+          </li>
+        </ol>
+        <p class="centre"><a class="bouton secondaire" href="https://www.google.com/maps/search/?api=1&amp;query=6+rue+du+Moulinet+75013+Paris" target="_blank" rel="noopener">Ouvrir le plan</a></p>
+      </div>
+    </section>
   </main>
 
   <footer class="pied">
@@ -129,20 +164,22 @@
         </div>
         <div>
           <h3>Contact</h3>
-          <p><a href="mailto:courstamara@gmail.com">courstamara@gmail.com</a></p>
+          <p><a href="tel:+33749300541">07 49 30 05 41</a><br><a href="mailto:courstamara@gmail.com">courstamara@gmail.com</a></p>
         </div>
       </div>
-      <small>© 2026 Cours Tâmara — Tous droits réservés</small>
+      <small>© 2026 Cours Tâmara — Tous droits réservés · <a href="cgv.html">Conditions générales de vente</a></small>
     </div>
   </footer>
 
   <script src="js/menu.js"></script>
   <script>
-    // Pré-sélectionne le sujet quand on arrive depuis une page d'offre (?sujet=langues / soutien)
+    // Pré-sélectionne le sujet quand on arrive depuis une page d'offre (?sujet=arabe / anglais / soutien)
     (function () {
       var p = new URLSearchParams(window.location.search).get('sujet');
       var s = document.getElementById('sujet');
       if (p === 'soutien') s.value = 'Soutien scolaire';
+      if (p === 'arabe') s.value = 'Arabe';
+      if (p === 'anglais') s.value = 'Anglais';
     })();
   </script>
 </body>
