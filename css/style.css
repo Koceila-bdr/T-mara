@@ -284,3 +284,27 @@ figcaption { font-size: .92rem; text-align: center; margin-top: .4rem; color: va
 .infos-ligne { background: #FFF3D1; border-radius: 10px; padding: .6rem .8rem; font-size: .98rem; margin: .6rem 0 .8rem; }
 .infos-pills { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
 .infos-pills li { background: var(--jaune); color: var(--noir); font-weight: 800; border-radius: 999px; padding: .4rem 1rem; box-shadow: 0 3px 0 #d9ab45; }
+
+/* ---------- Calendrier, inscriptions, arabe ---------- */
+.calendrier { display: grid; gap: 1rem; grid-template-columns: 1fr; max-width: 900px; margin: 1.5rem auto 0; }
+.cal-bloc {
+  background: var(--blanc); border-radius: var(--rayon); box-shadow: var(--ombre); padding: 1.2rem;
+  text-align: center; border-top: 6px solid var(--orange); display: flex; flex-direction: column; gap: .2rem;
+}
+.cal-bloc strong { color: var(--bleu); font-size: 1.25rem; }
+.cal-centre { background: var(--jaune); color: var(--noir); border-top-color: var(--bleu); }
+.cal-centre strong { color: var(--noir); font-size: 1.6rem; }
+.cal-emoji { font-size: 2rem; }
+@media (min-width: 800px) { .calendrier { grid-template-columns: 1fr 1fr 1fr; } }
+
+.carte-faq { text-align: center; }
+.carte-faq h2 { margin-bottom: .3rem; }
+.carte-faq h3 { color: var(--orange); }
+
+.carte-mini { text-align: center; padding: 1rem; }
+.carte-mini h3 { margin: 0; font-size: 1.05rem; }
+.carte-coran { margin-top: 1.2rem; display: grid; gap: 1rem; align-items: center; }
+@media (min-width: 800px) { .carte-coran { grid-template-columns: 2.2fr 1fr; } }
+
+.infos-pills a { color: inherit; text-decoration: none; }
+.hero .infos-pills { margin-top: 1.6rem; }
